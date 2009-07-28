@@ -3,7 +3,7 @@
 %define develname %mklibname %{name} -d
 
 Name:           quesoglc
-Version:        0.7.1
+Version:        0.7.2
 Release:        %mkrel 1
 Summary:        The OpenGL Character Renderer
 
@@ -57,7 +57,6 @@ cd ../
 
 %install
 rm -rf %{buildroot}
-#make install DESTDIR=$RPM_BUILD_ROOT
 %makeinstall_std
 
 rm -f %{buildroot}%{_libdir}/libGLC.la
@@ -83,4 +82,4 @@ rm -rf %{buildroot}
 %defattr(-,root,root,-)
 %{_includedir}/GL/glc.h
 %{_libdir}/libGLC.so
-
+%{_libdir}/pkgconfig/quesoglc.pc
