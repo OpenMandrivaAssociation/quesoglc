@@ -4,14 +4,13 @@
 
 Name:           quesoglc
 Version:        0.7.2
-Release:        %mkrel 1
+Release:        2
 Summary:        The OpenGL Character Renderer
 
 Group:          System/Libraries
 License:        LGPLv2+
 URL:            http://quesoglc.sourceforge.net/
 Source0:        http://downloads.sourceforge.net/%{name}/%{name}-%{version}-free.tar.bz2
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 BuildRequires:  pkgconfig(fontconfig) pkgconfig(glut)
 BuildRequires:  pkgconfig(fribidi) pkgconfig(glew) pkgconfig(sm) pkgconfig(xmu)
@@ -56,21 +55,15 @@ doxygen
 cd ../
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std
 
 rm -f %{buildroot}%{_libdir}/libGLC.la
 
-%clean
-rm -rf %{buildroot}
-
 %files -n %{libname}
-%defattr(-,root,root,-)
 %{_libdir}/libGLC.so.%{major}*
 %doc AUTHORS ChangeLog COPYING README THANKS docs/html
 
 %files -n %{develname}
-%defattr(-,root,root,-)
 %{_includedir}/GL/glc.h
 %{_libdir}/libGLC.so
 %{_libdir}/pkgconfig/quesoglc.pc
