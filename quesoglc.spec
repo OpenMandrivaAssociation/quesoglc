@@ -25,7 +25,7 @@ interface (API).
 %package -n	%{libname}
 Summary:        Libraries for %{name}
 Group:          System/Libraries
-Provides:       %{name} = %{version}-%{release}
+Provides:       %{name} = %{EVRD}
 
 %description -n	%{libname}
 The OpenGL Character Renderer (GLC) is a state machine that provides OpenGL
@@ -35,8 +35,8 @@ interface (API).
 %package -n	%{develname}
 Summary:        Development files for %{name}
 Group:          Development/C
-Requires:       %{libname} = %{version}
-Provides:       %{name}-devel = %{version}-%{release}
+Requires:       %{libname} = %{EVRD}
+Provides:       %{name}-devel = %{EVRD}
 
 %description -n	%{develname}
 This package provides the libraries, include files, and other resources needed
