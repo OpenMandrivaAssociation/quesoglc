@@ -61,7 +61,7 @@ rm -f %{buildroot}%{_libdir}/libGLC.la
 
 %files -n %{libname}
 %{_libdir}/libGLC.so.%{major}*
-%doc AUTHORS ChangeLog COPYING README THANKS docs/html
+%doc AUTHORS ChangeLog README THANKS docs/html
 
 %files -n %{develname}
 %{_includedir}/GL/glc.h
