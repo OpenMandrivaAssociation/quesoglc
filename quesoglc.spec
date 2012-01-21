@@ -13,9 +13,9 @@ URL:            http://quesoglc.sourceforge.net/
 Source0:        http://downloads.sourceforge.net/%{name}/%{name}-%{version}-free.tar.bz2
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
-BuildRequires:  fontconfig-devel mesaglut-devel
-BuildRequires:  fribidi-devel glew-devel libsm-devel libxmu-devel
-BuildRequires:  libxi-devel doxygen
+BuildRequires:  pkgconfig(fontconfig) pkgconfig(glut)
+BuildRequires:  pkgconfig(fribidi) pkgconfig(glew) pkgconfig(sm) pkgconfig(xmu)
+BuildRequires:  pkgconfig(xi) doxygen
 BuildRequires:  pkgconfig 
 
 %description
