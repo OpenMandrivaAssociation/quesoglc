@@ -1,10 +1,13 @@
+%define _disable_lto 1
+%define _disable_rebuild_configure 1
+
 %define major 0
 %define libname %mklibname %{name} %{major}
 %define develname %mklibname %{name} -d
 
 Name:		quesoglc
 Version:	0.7.2
-Release:	5
+Release:	6
 Summary:	The OpenGL Character Renderer
 
 Group:		System/Libraries
