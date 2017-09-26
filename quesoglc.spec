@@ -7,7 +7,7 @@
 
 Name:		quesoglc
 Version:	0.7.2
-Release:	6
+Release:	7
 Summary:	The OpenGL Character Renderer
 
 Group:		System/Libraries
