@@ -7,7 +7,7 @@
 
 Name:		quesoglc
 Version:	0.7.2
-Release:	7
+Release:	8
 Summary:	The OpenGL Character Renderer
 
 Group:		System/Libraries
@@ -16,6 +16,7 @@ URL:		http://quesoglc.sourceforge.net/
 Source0:	http://downloads.sourceforge.net/%{name}/%{name}-%{version}-free.tar.bz2
 Patch0:		quesoglc-0.7.2-glew-mx.patch
 Patch1:		quesoglc-0.7.2-doxyfile.patch
+Patch2:   glew-drop-glewContext.patch
 
 BuildRequires:	pkgconfig(fontconfig)
 BuildRequires:	pkgconfig(glut)
@@ -55,6 +56,7 @@ for developing GLC applications.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 rm -f include/GL/{glxew,wglew,glew}.h
 ln -s %{_includedir}/GL/{glxew,wglew,glew}.h include/GL/
 rm -rf src/fribidi
