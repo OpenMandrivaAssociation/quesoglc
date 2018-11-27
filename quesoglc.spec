@@ -17,6 +17,7 @@ Source0:	http://downloads.sourceforge.net/%{name}/%{name}-%{version}-free.tar.bz
 Patch1:		quesoglc-0.7.2-doxyfile.patch
 Patch2:		glew-drop-glewContext.patch
 Patch3:		fribidi.build.patch
+BuildRequires:  pkgconfig(egl)
 BuildRequires:	pkgconfig(fontconfig)
 BuildRequires:	pkgconfig(glut)
 BuildRequires:	pkgconfig(fribidi)
