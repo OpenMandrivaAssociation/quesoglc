@@ -14,10 +14,9 @@ Group:		System/Libraries
 License:	LGPLv2+
 URL:		http://quesoglc.sourceforge.net/
 Source0:	http://downloads.sourceforge.net/%{name}/%{name}-%{version}-free.tar.bz2
-Patch0:		quesoglc-0.7.2-glew-mx.patch
 Patch1:		quesoglc-0.7.2-doxyfile.patch
-Patch2:   glew-drop-glewContext.patch
-
+Patch2:		glew-drop-glewContext.patch
+Patch3:		fribidi.build.patch
 BuildRequires:	pkgconfig(fontconfig)
 BuildRequires:	pkgconfig(glut)
 BuildRequires:	pkgconfig(fribidi)
@@ -54,12 +53,15 @@ for developing GLC applications.
 
 %prep
 %setup -q
-%patch0 -p1
-%patch1 -p1
-%patch2 -p1
+%apply_patches
 rm -f include/GL/{glxew,wglew,glew}.h
 ln -s %{_includedir}/GL/{glxew,wglew,glew}.h include/GL/
 rm -rf src/fribidi
+
+# make autoreconf more happy
+sed -i -e 's,\(AM_INIT_AUTOMAKE(\[\),\1foreign subdir-objects ,' configure.in
+
+autoreconf -fiv
 
 %build
 %configure2_5x --disable-static
