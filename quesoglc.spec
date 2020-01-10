@@ -54,7 +54,7 @@ for developing GLC applications.
 
 %prep
 %setup -q
-%apply_patches
+%autopatch -p1
 rm -f include/GL/{glxew,wglew,glew}.h
 ln -s %{_includedir}/GL/{glxew,wglew,glew}.h include/GL/
 rm -rf src/fribidi
