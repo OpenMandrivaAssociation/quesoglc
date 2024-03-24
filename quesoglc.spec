@@ -17,6 +17,9 @@ Source0:	http://downloads.sourceforge.net/%{name}/%{name}-%{version}-free.tar.bz
 Patch1:		quesoglc-0.7.2-doxyfile.patch
 Patch2:		glew-drop-glewContext.patch
 Patch3:		fribidi.build.patch
+Patch4:		quesoglc-0.7.2-wayland.patch
+Patch5:		quesoglc-0.7.2-buildfix.patch
+
 BuildRequires:  pkgconfig(egl)
 BuildRequires:	pkgconfig(fontconfig)
 BuildRequires:	pkgconfig(glut)
@@ -53,8 +56,7 @@ This package provides the libraries, include files, and other resources needed
 for developing GLC applications.
 
 %prep
-%setup -q
-%autopatch -p1
+%autosetup -p1
 rm -f include/GL/{glxew,wglew,glew}.h
 ln -s %{_includedir}/GL/{glxew,wglew,glew}.h include/GL/
 rm -rf src/fribidi
@@ -65,8 +67,8 @@ sed -i -e 's,\(AM_INIT_AUTOMAKE(\[\),\1foreign subdir-objects ,' configure.in
 autoreconf -fiv
 
 %build
-%configure2_5x --disable-static
-%make
+%configure --disable-static
+%make_build
 pushd docs
 doxygen
 popd
