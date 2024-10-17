@@ -12,7 +12,7 @@ Summary:	The OpenGL Character Renderer
 
 Group:		System/Libraries
 License:	LGPLv2+
-URL:		http://quesoglc.sourceforge.net/
+URL:		https://quesoglc.sourceforge.net/
 Source0:	http://downloads.sourceforge.net/%{name}/%{name}-%{version}-free.tar.bz2
 Patch1:		quesoglc-0.7.2-doxyfile.patch
 Patch2:		glew-drop-glewContext.patch
