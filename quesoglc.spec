@@ -20,6 +20,11 @@ Patch3:		fribidi.build.patch
 Patch4:		quesoglc-0.7.2-wayland.patch
 Patch5:		quesoglc-0.7.2-buildfix.patch
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:  pkgconfig(egl)
 BuildRequires:	pkgconfig(fontconfig)
 BuildRequires:	pkgconfig(glut)
